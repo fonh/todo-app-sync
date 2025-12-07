@@ -43,67 +43,67 @@ export default function AddCategoryModal({ isOpen, onClose, onAddCategory }) {
 
   return (
     <div
-      className="modal-overlay"
+      className='modal-overlay'
       onClick={handleOverlayClick}
       onKeyDown={handleKeyDown}
-      role="dialog"
-      aria-modal="true"
-      aria-label="Ajouter une nouvelle catégorie"
+      role='dialog'
+      aria-modal='true'
+      aria-label='Ajouter une nouvelle catégorie'
     >
-      <div className="modal-content">
+      <div className='modal-content'>
         <h3>Nouvelle catégorie</h3>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="category-name">Nom</label>
+          <div className='form-group'>
+            <label htmlFor='category-name'>Nom</label>
             <input
-              id="category-name"
-              type="text"
+              id='category-name'
+              type='text'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Ex: Voyage, Travail, Loisirs..."
+              placeholder='Ex: Voyage, Travail, Loisirs...'
               required
               autoFocus // Focus automatique pour une meilleure UX
               maxLength={30} // Limite la longueur du nom
             />
           </div>
 
-          <div className="form-group">
+          <div className='form-group'>
             <label>Icône</label>
-            <IconPicker
-              selectedIcon={iconName}
-              onSelect={setIconName}
-            />
+            <IconPicker selectedIcon={iconName} onSelect={setIconName} />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="category-color">Couleur</label>
+          <div className='form-group'>
+            <label htmlFor='category-color'>Couleur</label>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <input
-                id="category-color"
-                type="color"
+                id='category-color'
+                type='color'
                 value={color}
                 onChange={(e) => setColor(e.target.value)}
-                style={{ width: '50px', height: '50px', border: 'none', cursor: 'pointer' }}
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
               />
-              <span style={{
-                width: '30px',
-                height: '30px',
-                backgroundColor: color,
-                borderRadius: '4px',
-                border: '1px solid #ddd'
-              }} />
+              <span
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  backgroundColor: color,
+                  borderRadius: '4px',
+                  border: '1px solid #ddd',
+                }}
+              />
             </div>
           </div>
 
-          <div className="modal-actions">
-            <button
-              type="button"
-              onClick={onClose}
-              className="cancel-btn"
-            >
+          <div className='modal-actions'>
+            <button type='button' onClick={onClose} className='cancel-btn'>
               Annuler
             </button>
-            <button type="submit" className="add-btn">
+            <button type='submit' className='add-btn'>
               <FaPlus /> Ajouter
             </button>
           </div>
